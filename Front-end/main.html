@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Front-end/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>Negenesis</title>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="/Front-end/main.html" class="menu-item" data-tooltip="Início"><i class="material-symbols-outlined">home</i></a>
+        <a href="#" class="menu-item" data-tooltip="Usuário"><i class="material-symbols-outlined">person</i></a>
+        <a href="#" class="menu-item" data-tooltip="Investimentos"><i class="material-symbols-outlined">payments</i></a>
+        <a href="#" class="menu-item" data-tooltip="Notícias"><i class="material-symbols-outlined">newspaper</i></a>
+        <a href="#" class="menu-item" data-tooltip="Configurações" onclick="toggleSettings()"><i class="material-symbols-outlined">settings</i></a>
+        <a href="#" class="menu-item" data-tooltip="Ajuda"><i class="material-symbols-outlined">help</i></a>
+    </div>
+
+    <div class="settings-panel" id="settingsPanel">
+        <h2>Configurações</h2>
+        <label>
+            <input type="checkbox">
+            Ativar Notificações
+        </label>
+        <label>
+            <input type="checkbox">
+            Modo Escuro
+        </label>
+        <button class="close-btn" onclick="toggleSettings()">Fechar</button>
+    </div>
+    
+    <script src="src/main.js"></script>
+</body>
+</html>
