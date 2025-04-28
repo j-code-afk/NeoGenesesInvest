@@ -1,0 +1,321 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    transition: all 0.5s;
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to top, #007d82d2, #9cd7d3);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    color: rgb(24, 120, 122);
+}
+
+.sidebar {
+    width: 100px;
+    height: 100vh;
+    background: #00afb5cb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    gap: 20px;
+    position: fixed;
+    z-index: 1;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.sidebar a:hover {
+    background: #005456cb;
+}
+
+.sidebar a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 70px;
+    background: #004f51cb;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    white-space: nowrap;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3;
+}
+
+.sidebar a:hover::after{
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-item {
+    cursor: pointer;
+}
+
+.tool-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 20px;
+    margin-bottom: 100px;
+    border: solid black;
+    padding: 50px;
+    border-radius: 10px;
+    background: #005456;
+}
+
+.tool-description {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 110%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tool-item:hover .tool-description {
+    display: block;
+    opacity: 1;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 40
+}
+
+.content{
+    flex: 1;
+    padding: 20px;
+    color: #222;
+}
+
+.settings-panel {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #00afb5;
+    color: white;
+    padding: 20px;
+    transition: right 0.3s ease;
+}
+
+.settings-panel.open {
+    right: 0;
+}
+
+.settings-panel h2 {
+    margin-bottom: 20px;
+}
+
+.settings-panel label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.settings-panel .toggle {
+    width: 40px;
+    height: 20px;
+    background-color: #004244d2;
+    border-radius: 20px;
+    position: relative;
+    transition: background-color 0.3;
+}
+
+.settings-panel .toggle::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: #ccc;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    transition: left 0.3s;
+}
+
+.settings-panel input[type="checkbox"] {
+    display: none;
+}
+
+.settings-panel input[type="checkbox"]:checked + .toggle {
+    background-color: #005456cb;
+}
+
+.settings-panel input[type="checkbox"]:checked + .toggle::before {
+    left: 22px;
+}
+
+.close-btn:hover {
+    background: #666;
+}
+
+.profile-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: #00afb5;
+    color: white;
+    padding: 20px;
+    transition: right 0.3s ease;
+}
+
+.profile-panel.open {
+    right: 0;
+}
+
+.profile-panel h2 {
+    margin-bottom: 20px;
+}
+
+.profile-panel label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.darkmode {
+    background: linear-gradient(to top, #0e2929, #226666);
+    color: white;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+}
+
+.darkmode .sidebar {
+    background: #005456;
+}
+
+.darkmode .sidebar a {
+    color: #ddd;
+}
+
+.darkmode .sidebar a:hover {
+    background: #003d3d;
+}
+
+.darkmode .sidebar a::after {
+    background: #003d3d;
+}
+
+.darkmode .settings-panel {
+    background: #003d3d;
+    color: white;
+}
+
+.darkmode .profile-panel {
+    background: #003d3d;
+    color: white;
+}
+
+.darkmode .toggle {
+    background-color: #226666;
+}
+
+.darkmode .toggle::before {
+    background-color: #fff;
+}
+
+.darkmode input[type="checkbox"]:checked + .toggle {
+    background-color: #00afb5;
+}
+
+.imagelogo {
+    width: 300px;
+    margin-left: 100px;
+    margin-top: 0px;
+    position: absolute; 
+}
+
+.logo {
+    width: auto;
+    display: flex;
+    position: fixed;
+    z-index: 0;
+}
+
+.logo h1 {
+    position: absolute;
+    margin-left: 358px;
+}
+
+.logo p {
+    position: absolute;
+    margin-left: 415px;
+    margin-top: 60px
+}
+
+.loginBT {
+    padding: 17px;
+    background-color: rgb(0, 161, 161);
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    margin-left: 85vw;
+    margin-top: 15px;
+    cursor: pointer;
+    color: rgb(186, 254, 255);
+    transition: all 0.5s;
+}
+
+.loginBT:hover {
+    transform: scale(1.05);
+}
+
+.darkmode .loginBT {
+    color: white;
+    background-color: #2e9e9e;
+}
+
+.tools {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 70px;
+    left: 20%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}

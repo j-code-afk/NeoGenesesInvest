@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de moedas</title>
+    <link rel="icon" type="image/png" sizes="900x900" href="images/icone.png">
+    <link rel="stylesheet" href="styles/convert.css">
+</head>
+<body>
+    <div class="header">
+        <img id="logo" src="images/logoW.png" alt="Logo">
+        <button id="loginBt">Login</button>
+        <div class="bar"></div>
+    </div>
+   
+    <div class="pagesbt">
+        <button id="fiat" class="page coinPage" onclick="toggleType('f')">Moedas tradicionais</button>
+        <button id="criptos" class="page criptoPage" onclick="toggleType('c')">Criptomoedas</button>
+    </div>
+    <div class="comp">
+        <h1>Comparador: </h1>
+        <select  id="comparator">
+            <option value="0">Real</option>
+            <option value="1">Euro</option>
+            <option value="2">Dollar</option>
+        </select>
+    </div>
+    <div class="coinConversors" id="fiatPage">
+
+        <h1 class="dr">Dolar:</h1>
+        <div class="convert">
+            <div style="display: flex; width: 29vw;">
+                <h1>Valor Atual:</h1><h2 class="atualValue" style="margin-left: 20px; margin-top: 6vh;">5,91 brl</h2>
+            </div>
+            <div class="valores">
+                <h2>Variação Hoje:</h2> 
+                <div>
+                    <h3>Maior valor:</h3>
+                    <h3 class="Dval maxValue">5,91</h3>
+                    <h3>Menor valor: </h3>
+                    <h3 class="Dval minValue">5,72</h3>
+                    <h3>aumento de: </h3>
+                    <h3 class="Dval percentage">1,87%</h3>
+                </div>
+            </div>
+            <div class="conversor">
+                <div>
+                    <h2>USD</h2><h2>-&gt;</h2><h2 class="coinName">BRL</h2>
+                </div>
+                <input type="number" class="valor1"  placeholder="1">
+                <input type="number"  placeholder="5,91" class="valor2">
+            </div>
+        </div>
+
+        <h1>Euro:</h1>
+        <div class="convert">
+            <div style="display: flex; width: 32vw;">
+                <h1>Valor Atual:</h1><h2 class="atualValue" style="margin-left: 20px; margin-top: 6vh;">5,91 brl</h2>
+            </div>
+            <div class="valores">
+                <h2>Variação Hoje: </h2>
+                <div>
+                    <h3>Maior valor:</h3>
+                    <h3 class="Dval maxValue">5,91</h3>
+                    <h3>Menor valor: </h3>
+                    <h3 class="Dval minValue">5,72</h3>
+                    <h3>aumento de: </h3>
+                    <h3 class="Dval percentage">1,87%</h3>
+                </div>
+            </div>
+            <div class="conversor">
+                <div>
+                    <h2>EUR</h2><h2>-&gt;</h2><h2 class="coinName">BRL</h2>
+                </div>
+                <input type="number" class="valor1" placeholder="1">
+                <input type="number" class="valor2">
+            </div>
+        </div>
+
+    </div>
+    <div class="coinConversors" id="criptosPage">
+        <h1>Bitcoin:</h1>
+        <div class="convert">
+            <h1>Valor Atual: </h1>
+            <div class="valores">
+                <h2>Variação Hoje: </h2>
+                <div>
+                    <h3>Maior valor:</h3>
+                    <h3 class="Dval maxValue">5,91</h3>
+                    <h3>Menor valor: </h3>
+                    <h3 class="Dval minValue">5,72</h3>
+                    <h3>aumento de: </h3>
+                    <h3 class="Dval percentage">1,87%</h3>
+                </div>
+            </div>
+            <div class="conversor">
+                <div>
+                    <h2>BTC</h2><h2>-&gt;</h2><h2 class="coinName">BRL</h2>
+                </div>
+                <input type="number" placeholder="1">
+                <input type="number" >
+            </div>
+        </div>
+        <h1>Ethereum:</h1>
+        <div class="convert">
+            <h1>Valor Atual: </h1>
+            <div class="valores">
+                <h2>Variação Hoje: </h2>
+                <div>
+                    <h3>Maior valor:</h3>
+                    <h3 class="Dval maxValue">5,91</h3>
+                    <h3>Menor valor: </h3>
+                    <h3 class="Dval minValue">5,72</h3>
+                    <h3>aumento de: </h3>
+                    <h3 class="Dval percentage">1,87%</h3>
+                </div>
+            </div>
+            <div class="conversor">
+                <div>
+                    <h2>ETH</h2><h2>-&gt;</h2><h2 class="coinName">BRL</h2>
+                </div>
+                <input type="number" >
+                <input type="number" >
+            </div>
+        </div>
+
+        <h1>Solana:</h1>
+        <div class="convert">
+            <h1>Valor Atual: </h1>
+            <div class="valores">
+                <h2>Variação Hoje: </h2>
+                <div>
+                    <h3>Maior valor:</h3>
+                    <h3 class="Dval maxValue">5,91</h3>
+                    <h3>Menor valor: </h3>
+                    <h3 class="Dval minValue">5,72</h3>
+                    <h3>aumento de: </h3>
+                    <h3 class="Dval percentage">1,87%</h3>
+                </div>
+            </div>
+            <div class="conversor">
+                <div>
+                    <h2>SOL</h2><h2>-&gt;</h2><h2 class="coinName">BRL</h2>
+                </div>
+                <input type="number" >
+                <input type="number">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="src/convert.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>Neogenesis</title>
+</head>
+<body>
+    <button id="loginBT" class="loginBT" onclick="window.location.href='login.html'">Login</button>
+    <div class="sidebar">
+        <a href="index.html" class="menu-item" data-tooltip="Início"><i class="material-symbols-outlined">home</i></a>
+        <a class="menu-item" data-tooltip="Usuário" onclick="toggleProfile()"><i class="material-symbols-outlined">person</i></a>
+        <a href="#" class="menu-item" data-tooltip="Carteira"><i class="material-symbols-outlined">payments</i></a>
+        <a href="#" class="menu-item" data-tooltip="Ferramentas" onclick="toggleTools()"><i class="material-symbols-outlined">build</i></a>
+        <a class="menu-item" data-tooltip="Configurações" onclick="toggleSettings()"><i class="material-symbols-outlined">settings</i></a>
+        <a href="#" class="menu-item" data-tooltip="Ajuda"><i class="material-symbols-outlined">help</i></a>
+    </div>
+    <div class="logo">
+        <img class="imagelogo" src="images/logoW.png" alt="logo Neogenesis">
+    </div>
+
+    <div class="tools" style="display: none;">
+        <div class="tool-item">
+            <i class="material-symbols-outlined">build</i>
+            <div class="tool-description">Renda Fixa: Investimentos de baixo risco e retorno fixo.</div>
+        </div>
+        <div class="tool-item">
+            <i class="material-symbols-outlined">build</i>
+            <div class="tool-description">Conversor de moedas: converte valores de moedas e Criptomoedas</div>
+        </div>
+        <div class="tool-item">
+            <i class="material-symbols-outlined">build</i>  
+        </div>
+        <div class="tool-item">
+            <i class="material-symbols-outlined">build</i>
+        </div>
+     </div>    
+
+    <div class="settings-panel" id="settingsPanel">
+        <h2>Configurações</h2>
+        <label>
+            <input type="checkbox" id="toggleCheckbox-notification">
+            <span class="toggle"></span>
+            Ativar Notificações
+        </label>
+        <label>
+            <input type="checkbox" id="toggleCheckbox-darkmode">
+            <span class="toggle"></span>
+            Modo Escuro
+        </label>
+    </div>
+
+    <div class="profile-panel" id="profilePanel">
+        <h2>Usuário</h2>
+        <label>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil dolores quidem quo sunt totam. Hic modi aperiam aut asperiores ducimus optio est voluptatum aspernatur corporis? Rerum voluptas modi sed placeat.
+        </label>
+        <button>Trocar de Conta</button>
+        <button onclick="closeSection()">Sair</button>
+    </div>
+
+   
+    
+    <script src="src/main.js"></script>
+</body>
+</html>
