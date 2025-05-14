@@ -3,7 +3,7 @@ bt.addEventListener("click",()=>{
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    fetch('http://localhost:8080/user/login',{
+    fetch('https://localhost:8080/user/login',{
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({password: password,email: email})
@@ -18,16 +18,20 @@ bt.addEventListener("click",()=>{
             })
         }
     }).then(data =>{
-        alert(data.name+" logado com sucesso");
+        if (data && data.name && data.id) {
+            alert(data.name+" logado com sucesso");
 
-        const dat = JSON.parse(localStorage.getItem("ngdb")) || {};
+            const dat = JSON.parse(localStorage.getItem("ngdb")) || {};
 
-        dat.userName = data.name;
-        dat.userId = data.id; 
+            dat.userName = data.name;
+            dat.userId = data.id; 
 
-        localStorage.setItem("ngdb",JSON.stringify(dat));
+            localStorage.setItem("ngdb",JSON.stringify(dat));
 
-        location.href = "index.html"
+            location.href = "index.html"
+        } else {
+            alert("Erro inesperado no login");
+        }
     })
     .catch(error =>{
         alert(error);
