@@ -11,16 +11,16 @@ bt.addEventListener("click",()=>{
     fetch('https://localhost:8080/user/login',{
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        credentials: "include", // Precisa para aceitar cookies do backend
+        credentials: "include", // essencial para aceitar cookies HttpOnly
         body: JSON.stringify({password: password,email: email})
     })
     .then(response =>{
         if(response.ok){
-            return response.text().then(text=>{
-                throw new Error("Erro: "+text);
-            });
+            return response.json();
         }
-        return response.json();
+        return response.text().then(text=>{
+                throw new Error("Erro: "+text);
+        });
     })                                                   
     .then(data =>{
         if (data && data.name && data.id) {
