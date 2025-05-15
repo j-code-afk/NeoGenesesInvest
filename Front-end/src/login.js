@@ -17,13 +17,13 @@ bt.addEventListener("click",()=>{
         return;
     }
 
-    if (password.lenght < 8) {
+    if (password.length < 8) {
         alert("A senha deve ter pelo menos 8 caracteres.");
         return;
     }
     
     // Requisição
-    fetch('http://localhost:8080/user/login',{
+    fetch('https://localhost:8080/user/login',{
         method: "POST",
         headers: {"Content-Type": "application/json"},
         credentials: "include", // essencial para aceitar cookies HttpOnly
