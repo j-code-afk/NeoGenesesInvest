@@ -6,6 +6,7 @@ bt.addEventListener("click",()=>{
     fetch('https://localhost:8080/user/login',{
         method: "POST",
         headers: {"Content-Type": "application/json"},
+        credentials: "include", // Precisa para aceitar cookies do backend
         body: JSON.stringify({password: password,email: email})
     })
     .then(response =>{
@@ -15,20 +16,12 @@ bt.addEventListener("click",()=>{
             return response.text().then(text=>{
                 alert("erro: "+text);
                 console.log(text)
-            })
-        }
+            })                                         
+        }          
     }).then(data =>{
         if (data && data.name && data.id) {
-            alert(data.name+" logado com sucesso");
-
-            const dat = JSON.parse(localStorage.getItem("ngdb")) || {};
-
-            dat.userName = data.name;
-            dat.userId = data.id; 
-
-            localStorage.setItem("ngdb",JSON.stringify(dat));
-
-            location.href = "index.html"
+            alert(data.name+" logado com sucesso"); 
+            location.href = "index.html";
         } else {
             alert("Erro inesperado no login");
         }
@@ -37,6 +30,4 @@ bt.addEventListener("click",()=>{
         alert(error);
         console.log(error);
     })
-    
-        
 })
