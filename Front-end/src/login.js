@@ -3,12 +3,27 @@ bt.addEventListener("click",()=>{
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
+    // Regex simples para o email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Validações
     if (!email || !password) {
         alert("Por favor, preench todos os campos.");
         return;
     }
 
-    fetch('https://localhost:8080/user/login',{
+    if (!emailRegex.test(email)) {
+        alert("O e-mail inserido não é válido.");
+        return;
+    }
+
+    if (password.lenght < 8) {
+        alert("A senha deve ter pelo menos 8 caracteres.");
+        return;
+    }
+    
+    // Requisição
+    fetch('http://localhost:8080/user/login',{
         method: "POST",
         headers: {"Content-Type": "application/json"},
         credentials: "include", // essencial para aceitar cookies HttpOnly
@@ -27,12 +42,12 @@ bt.addEventListener("click",()=>{
             alert(`${data.name} logado com sucesso`); 
             location.href = "index.html";
         } else {
-            console.error("Unexpected response structure:", data);
-            alert("Erro inesperado no login");
+            console.error("Resposta inesperada:", data);
+            alert("Erro inesperado ao fazer login");
         }
     })
     .catch(error => {
     alert("Ocorreu um erro ao tentar fazer login. Tente novamente mais tarde.");
-    console.error("Login error:", error);
+    console.error("Erro no login:", error);
     });
 })
